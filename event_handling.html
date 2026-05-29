@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+Phone:
+<input type="text" id="p" onblur="check()"><br><br>
+
+<select onchange="fee(this.value)">
+    <option value="">Select Event</option>
+    <option value="100">Music</option>
+    <option value="200">Sports</option>
+</select>
+
+<p id="f"></p>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUCZ-KV5NRgkqB58YAHGe6FHx6vbURiNffuA&s" class="pic" alt="Event2" title="Event2">
+
+<br><br>
+
+<textarea onkeyup="count(this)"></textarea>
+<p id="c">0</p>
+
+<button onclick="msg()">Submit</button>
+
+<script>
+function check(){
+    let x=document.getElementById("p").value;
+    if(x.length!=10)
+        alert("Invalid Number");
+}
+
+function fee(v){
+    document.getElementById("f").innerHTML="Fee = ₹"+v;
+}
+
+function msg(){
+    alert("Submitted Successfully");
+}
+
+function big(i){
+    i.width=300;
+}
+
+function count(t){
+    document.getElementById("c").innerHTML=t.value.length;
+}
+</script>
+
+</body>
+</html>
