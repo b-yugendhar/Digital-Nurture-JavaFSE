@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Feedback</title>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color:#efebeb;
+    color:#333;
+    background-image:url('https://img.magnific.com/free-vector/abstract-chat-box-shape-pattern-white-background_1017-59690.jpg?semt=ais_hybrid&w=740&q=80.jpg');
+}
+header{
+    background:linear-gradient(to right,#04317e,#00bcd4);
+    color:white;
+    text-align:center;
+    padding:20px;
+    border:0 0 10px rgba(0,0,0,0.2);
+}
+nav{
+    margin-top:15px;
+}
+nav a{
+    color:rgb(15, 13, 13);
+    background:white;
+    text-decoration:none;
+    margin:0 15px;
+    font-weight:bold;
+    padding:8px 12px;
+    border-radius:5px;
+}
+nav a:hover{
+    background:white;
+    color:#0077cc;
+}
+section{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px 20px;
+}
+form{
+    background:white;
+    width:450px;
+    padding:30px;
+    border:1px solid #0e0d0d;
+}
+form h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+form label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+form input[type="text"], form select, form textarea{
+    width:100%;
+    padding:10px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+form button{
+    width:100%;
+    padding:10px;
+    background-color:#617863;
+    color:rgb(244, 238, 238);
+    border:none;
+    border-radius:4px;
+    cursor:pointer;
+}
+form button:hover{
+    background-color:#4a5a4a;
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+<h1>Event Feedback</h1>
+
+<nav>
+        <a href="index.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="register.html">Register</a>
+        <a href="feedback.html">Feedback</a>
+        <a href="contact.html">Contact</a>
+        <a href="help.html">Help</a>
+        <a href="preferences.html">Preferences</a>
+</nav>
+</header>
+
+<section>
+
+<form>
+
+<h2>Give Your Feedback</h2>
+
+<label>Phone Number</label>
+<input
+type="text"
+id="phone"
+placeholder="Enter 10 digit phone number"
+onblur="validatePhone()">
+
+<label>Select Event</label>
+<select id="feeEvent" onchange="showFee()">
+<option value="">Choose Event</option>
+<option value="music">Music Festival</option>
+<option value="sports">Sports Meet</option>
+<option value="tech">Tech Workshop</option>
+</select>
+
+<p id="fee"></p>
+
+<label>Your Feedback</label>
+
+<textarea
+id="feedbackText"
+rows="5"
+placeholder="Type feedback..."
+onkeyup="countCharacters()">
+</textarea>
+
+<p id="charCount">Characters: 0</p>
+
+<button
+type="button"
+onclick="submitFeedback()">
+Submit Feedback
+</button>
+
+</form>
+
+</section>
+</body>
+</html>
